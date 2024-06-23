@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>WEB ROTI BALAP</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<img src="assets/icon/partner.png" class="logo-img" />
+				<h1 class="logo-title">ROTI BALAP</h1>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="contact.html">ABOUT</a></li>
+					<li><a href="#yt">YOUTUBE</a></li>
+					<li><a onclick="darkMode()" id='mode' class='a-dark'>MODE</a></li>
+				</ul>
+			</nav>
+			<button class="btn-cta"><a href="https://www.tiktok.com/@roti_balap_balap" target='_blank'>Follow Saya</a></button>
+		</header>
+		<div class="container">
+			<div class="intro">
+				<h1 class="title">About me</h1>
+				<img src="assets/foto/rgb.png" alt="rbg.jpg" class="img-foto"/>
+				<h1 class="title-me">Namaku Dzaky, aku gabung di youtube tahun 2022, video pertamaku tentang cara download stumble guys di laptop, awalnya nama channel youtube ku dzaky zulhilmi 86, lalu menjadi dzaky zulhilmi gaming, lalu menjadi ROTI BALAP GAMING</p>
+			</div>
+		</div>
+		<div id="yt">
+		<div class="parallax">
+			<div class="tentang">
+				<p class="title">Saya Adalah Gamers</p>
+				<p class="description"><a href="https://youtube.com/@ROTI_BALAP_GAMING" target='_blank' class='a-ff'>SRC YT: ROTI BALAP GAMING</a></p>
+			</div>
+		</div>
+		<div>
+			<footer>
+				<p>&copy; ROTI BALAP GAMING Web site 2024</p>
+			</footer>
+		</div>
+		</div>
+		<script>
+			let body = document.body;
+			let mode = document.getElementById('mode');
+			
+			const darkLimit = 10;
+			let darkCounter = 0;
+			let darkRemainingLeft;
+			
+			
+			function updateModeText() {
+				if (body.classList.contains("dark")) {
+					mode.textContent = "LIGHT_MODE";
+				} else {
+					mode.textContent = "DARK_MODE";
+				}
+			}
+			
+			function darkMode() {
+				if(darkLimit == darkCounter){
+					alert('jatah ganti dark mode habis')
+					return;
+				}
+				darkCounter += 1;
+				let darkRemainingLeft = darkLimit - darkCounter
+				
+				console.log('darkMode diklik sebanyak', darkCounter);
+				console.log('jatah ganti', darkRemainingLeft);
+				body.classList.toggle("dark")
+				updateModeText();
+			}
+			updateModeText();
+		</script>
+	</body>
+</html>
